@@ -24,6 +24,11 @@ urlpatterns = [
         include("everycheese.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
+    path(
+        "cheeses/", 
+        include('everycheese.cheeses.urls',
+        namespace='cheeses')
+    )
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
