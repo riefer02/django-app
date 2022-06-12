@@ -5,6 +5,13 @@ from ..models import Cheese
 import factory
 import factory.fuzzy
 
+import pytest
+
+
+@pytest.fixture
+def cheese():
+    return CheeseFactory()
+
 
 class CheeseFactory(factory.django.DjangoModelFactory):
     name = factory.fuzzy.FuzzyText()
